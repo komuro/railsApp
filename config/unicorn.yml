@@ -5,11 +5,12 @@ development:
 #  listen: "unix:/tmp/sockets/unicorn.sock"
 #  listen: "unix:/vagrant/railsApp/tmp/sockets/unicorn.sock"
 #  listen: "unix:/home/app/sample/development/current/tmp/sockets/unicorn.sock"
- 
+
 staging:
   worker_processes: 2
-  listen: "unix:/home/app/sample/staging/current/tmp/sockets/unicorn.sock"
- 
+  listen: "unix:/var/www/railsApp/current/tmp/unicorn.sock"
+  # listen: "unix:/home/app/sample/staging/current/tmp/sockets/unicorn.sock"
+
 production:
   worker_processes: 16
   listen: "unix:/home/app/sample/production/current/tmp/sockets/unicorn.sock"
