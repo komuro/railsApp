@@ -20,7 +20,26 @@
 # role :app, %w{deploy@example.com}, my_property: :my_value
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
+# role :app, %w{komuro@vagrant.local}
+# role :web, %w{komuro@vagrant.local}
+# role :db,  %w{komuro@vagrant.local}
+# role :app, %w{komuro@localhost}
+# role :web, %w{komuro@localhost}
+# role :db,  %w{komuro@localhost}
 
+user = "komuro"
+ipaddress = "192.168.33.10"
+role :app, ["#{user}@#{ipaddress}"]
+role :web, ["#{user}@#{ipaddress}"]
+# role :db,  ["#{user}@#{ipaddress}"]
+
+set :ssh_options, {
+  # ローカル環境のユーザーの秘密鍵ファイルを設定する
+  keys: %w(/Users/KomuroTakeshi/.ssh/login.pem),
+  forward_agent: true,
+}
+
+set :rails_env, :staging
 
 
 # Configuration
