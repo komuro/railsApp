@@ -8,7 +8,8 @@ development:
 
 staging:
   worker_processes: 2
-  listen: "unix:/var/www/railsApp/current/tmp/unicorn.sock"
+  #listen: "unix:/var/www/railsApp/current/tmp/unicorn.sock"
+  listen: "unix:/tmp/unicorn.sock"
   # listen: "unix:/home/app/sample/staging/current/tmp/sockets/unicorn.sock"
 
 production:
